@@ -1,0 +1,45 @@
+---
+title: "r-exploring"
+author: "Erica Dale"
+date: "2022-08-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(skimr)
+library(GGally)
+
+```
+
+Exploring Diamonds Data
+
+```{r}
+view(diamonds)
+names(diamonds)
+dim(diamonds)
+summary(diamonds)
+head(diamonds)
+tail(diamonds)
+skimr::skim(diamonds)
+```
+
+Create pairs plot
+
+```{r, eval = FALSE}
+ggpairs(data = diamonds) 
+
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, y = price)) +
+  geom_point()
+
+ggplot(data = diamonds, aes(x = carat)) +
+  geom_histogram()
+
+
+
+```
+
